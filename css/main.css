@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #0c0c1e;
+    color: #e0e0e0;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+#animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    background: linear-gradient(-45deg, #0c0c1e, #1a1a2e, #0c0c1e, #8a2be2);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: rgba(18, 18, 40, 0.6);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.btn-primary {
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+}
+
+.btn-primary:hover {
+    background-color: #9b4dff;
+    box-shadow: 0 0 15px #8a2be2, 0 0 25px #8a2be2, 0 0 40px #8a2be2, 0 0 60px #8a2be2;
+    transform: translateY(-2px);
+}
+
+.neon-text {
+    color: #0ff;
+    text-shadow: 0 0 3px #0ff, 0 0 6px #0ff, 0 0 12px #0ff;
+    font-weight: 700;
+}
+
+.soft-green-text {
+    color: #a7f3d0;
+    text-shadow: 0 0 1px #a7f3d0, 0 0 2px #a7f3d0;
+}
+
+.reflect-hover {
+    transition: all 0.3s ease;
+}
+
+.reflect-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.footer {
+    background-color: #0a0a1a;
+    padding: 2rem;
+    text-align: center;
+}
+
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-left-color: #0ff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

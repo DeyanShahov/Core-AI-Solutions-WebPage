@@ -1,0 +1,96 @@
+<section id="services" class="section">
+    <h2 class="text-4xl font-bold mb-8 text-center soft-green-text">Нашите услуги</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Machine Learning -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">Машинно обучение</h3>
+            <p class="text-gray-400">Разработваме алгоритми, които позволяват на системите да се учат от данни и да правят прогнози, без да бъдат изрично програмирани.
+                <ul class="list-disc list-inside mt-2 space-y-1">
+                    <li><b>Наблюдавано обучение:</b> Прогнозиране на продажби, класифициране на изображения.</li>
+                    <li><b>Ненаблюдавано обучение:</b> Сегментиране на клиенти, откриване на аномалии.</li>
+                    <li><b>Обучение чрез подсилване:</b> В основата на самоуправляващи се автомобили и игри.</li>
+                </ul>
+            </p>
+        </div>
+        <!-- Automation -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">Автоматизация</h3>
+            <p class="text-gray-400">Използваме интелигентни системи за управление на комплексни процеси без човешка намеса, адаптирайки се към променящи се условия.
+                <ul class="list-disc list-inside mt-2 space-y-1">
+                    <li><b>RPA:</b> Автоматизация на рутинни задачи като въвеждане на данни.</li>
+                    <li><b>IPA:</b> Комбинация от RPA и AI за обработка на неструктурирани данни.</li>
+                    <li><b>BPA:</b> Цялостна автоматизация на бизнес процеси, от начало до край.</li>
+                </ul>
+            </p>
+        </div>
+        <!-- Text Generation -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+             <h3 class="text-2xl font-bold mb-2">Генеративен AI: Текст ✨</h3>
+            <p class="text-gray-400 mb-2">Създаване на съдържание, обобщения и други с помощта на AI.</p>
+            <textarea id="textPrompt" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Въведете тема..." rows="2"></textarea>
+            <button id="generateTextBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                <span class="flex items-center justify-center">Генерирай текст<span id="textSpinner" class="hidden ml-2 loader"></span></span>
+            </button>
+            <div id="textOutput" class="mt-4 p-4 bg-gray-900 rounded-md whitespace-pre-wrap text-sm max-h-40 overflow-y-auto"></div>
+        </div>
+        <!-- Solution Generation -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">Идеи за AI решения ✨</h3>
+            <p class="text-gray-400">Опишете бизнес проблем и получете идея за AI решение.</p>
+            <textarea id="businessProblem" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Напр. 'автоматизиране на поддръжката'..." rows="2"></textarea>
+            <button id="generateSolutionBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                <span class="flex items-center justify-center">Генерирай решение<span id="solutionSpinner" class="hidden ml-2 loader"></span></span>
+            </button>
+            <div id="solutionOutput" class="mt-4 p-4 bg-gray-900 rounded-md whitespace-pre-wrap text-sm max-h-40 overflow-y-auto"></div>
+        </div>
+        <!-- Description Generation -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">Генератор на описания ✨</h3>
+            <p class="text-gray-400">Въведете характеристики на продукт и получете описание.</p>
+            <textarea id="productFeatures" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Напр. 'безжични слушалки, 20ч батерия'..." rows="2"></textarea>
+            <button id="generateDescriptionBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                <span class="flex items-center justify-center">Генерирай описание<span id="descriptionSpinner" class="hidden ml-2 loader"></span></span>
+            </button>
+            <div id="descriptionOutput" class="mt-4 p-4 bg-gray-900 rounded-md whitespace-pre-wrap text-sm max-h-40 overflow-y-auto"></div>
+        </div>
+        <!-- Code Generation -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">AI Асистент за Код ✨</h3>
+            <p class="text-gray-400">Поискайте AI да напише или обясни код.</p>
+            <textarea id="codePrompt" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Напр. 'Python функция за бинарно търсене'..." rows="2"></textarea>
+            <button id="generateCodeBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                <span class="flex items-center justify-center">Генерирай код<span id="codeSpinner" class="hidden ml-2 loader"></span></span>
+            </button>
+            <div id="codeOutput" class="mt-4 p-4 bg-gray-900 rounded-md whitespace-pre-wrap text-sm max-h-40 overflow-y-auto"></div>
+        </div>
+        <!-- Image Generation -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">Генератор на изображения ✨</h3>
+            <p class="text-gray-400">Опишете изображение и AI ще го създаде.</p>
+            <textarea id="imagePrompt" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Напр. 'футуристичен град, неонови светлини'..." rows="2"></textarea>
+            <button id="generateImageBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                <span class="flex items-center justify-center">Генерирай изображение<span id="imageSpinner" class="hidden ml-2 loader"></span></span>
+            </button>
+            <div id="imageOutput" class="mt-4 p-4 bg-gray-900 rounded-md flex justify-center items-center h-40"></div>
+        </div>
+        <!-- Text-to-Speech -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">Текст към говор ✨</h3>
+            <p class="text-gray-400">Напишете нещо и чуйте как AI го изговаря.</p>
+            <textarea id="ttsPrompt" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Напишете изречение..." rows="4"></textarea>
+            <button id="speakBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                <span class="flex items-center justify-center">Възпроизведи ▶️<span id="ttsSpinner" class="hidden ml-2 loader"></span></span>
+            </button>
+        </div>
+        <!-- Image Analysis -->
+        <div class="bg-gray-800 p-6 rounded-lg reflect-hover">
+            <h3 class="text-2xl font-bold mb-2">Анализ на изображения ✨</h3>
+            <p class="text-gray-400">Качете изображение и AI ще го опише.</p>
+            <input type="file" id="imageAnalyzeInput" accept="image/*" class="w-full text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"/>
+            <button id="analyzeImageBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                <span class="flex items-center justify-center">Анализирай<span id="analyzeImageSpinner" class="hidden ml-2 loader"></span></span>
+            </button>
+            <div id="imageAnalyzeOutput" class="mt-4 p-4 bg-gray-900 rounded-md whitespace-pre-wrap text-sm max-h-40 overflow-y-auto"></div>
+        </div>
+    </div>
+</section>
