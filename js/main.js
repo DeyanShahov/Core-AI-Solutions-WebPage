@@ -1,6 +1,8 @@
 import { handleApiCall, toggleLoading, fileToBase64, pcmToWav, base64ToArrayBuffer } from './utils.js';
 import { initChat } from './chat.js';
 import { API_KEY } from './config.js';
+// Ensure components (header/footer etc.) are loaded when this file is the module entrypoint
+import './loadComponents.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize chat functionality first

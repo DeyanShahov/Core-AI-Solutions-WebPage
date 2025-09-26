@@ -39,14 +39,23 @@ function updateHeaderNavigation() {
                 link.href = '#' + href.split('#')[1];
             }
             // Добавяме плавно скролиране за всички вътрешни линкове
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+            // Make handler idempotent by marking links we've processed
+            if (!link.dataset.internalNavAttached) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // compute header height offset
+                        const rootStyles = getComputedStyle(document.documentElement);
+                        const headerHeightVal = rootStyles.getPropertyValue('--header-height') || '80px';
+                        const headerHeight = parseInt(headerHeightVal, 10) || 80;
+                        const top = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 8;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                });
+                link.dataset.internalNavAttached = 'true';
+            }
         } else {
             // На подстраниците линковете водят към началната страница + секция
             if (href.startsWith('#')) {
@@ -55,6 +64,28 @@ function updateHeaderNavigation() {
             }
         }
     });
+}
+
+// Scroll to the element indicated by the URL hash after components are loaded.
+// Retries a few times in case components are inserted asynchronously.
+async function scrollToLocationHash(retries = 8, delay = 100) {
+    if (!window.location.hash) return;
+    const id = window.location.hash.substring(1);
+
+    for (let i = 0; i < retries; i++) {
+        const el = document.getElementById(id);
+        if (el) {
+            // Read header height from CSS variable if present, fallback to 80
+            const rootStyles = getComputedStyle(document.documentElement);
+            const headerHeightVal = rootStyles.getPropertyValue('--header-height') || '80px';
+            const headerHeight = parseInt(headerHeightVal, 10) || 80;
+            const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - 8; // small extra offset
+            window.scrollTo({ top, behavior: 'smooth' });
+            return;
+        }
+        // wait and retry
+        await new Promise(res => setTimeout(res, delay));
+    }
 }
 
 // Load all components when the page loads
@@ -74,4 +105,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     await Promise.all(components.map(component => 
         loadComponent(component.id, component.path)
     ));
+
+    // After components load, if the URL contains a hash (e.g. index.html#services)
+    // scroll to the target element. This fixes the case when the browser attempts
+    // to jump to the anchor before component HTML (with the target id) is inserted.
+    scrollToLocationHash();
 });
