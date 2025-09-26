@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генериране на изображения с AI - Core AI Solutions</title>
+    <script src="https://cdn.tailwindcss.com" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Анимиран градиент за фон -->
+    <div id="animated-background"></div>
+
+    <div id="header"></div>
+
+    <main class="container mx-auto px-4 py-8 mt-24">
+        <h1 class="text-4xl md:text-6xl font-bold text-center mb-8 neon-text">Генериране на изображения с AI</h1>
+        
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">За услугата</h2>
+            <p class="text-gray-300 mb-4">
+                Нашата услуга за генериране на изображения използва най-съвременни AI модели за създаване на визуално съдържание по ваше описание. От художествени илюстрации до продуктови визуализации, нашият AI може да създаде разнообразни изображения според вашите нужди.
+            </p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">Възможности</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Художествени илюстрации</h3>
+                    <p class="text-gray-400">Създаване на уникални художествени изображения в различни стилове</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Продуктов дизайн</h3>
+                    <p class="text-gray-400">Генериране на концептуални продуктови визуализации</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">Демонстрация</h2>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <p class="text-gray-400 mb-4">Изпробвайте нашия AI генератор на изображения:</p>
+                <textarea id="imagePrompt" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Опишете изображението, което искате да създадете..." rows="4"></textarea>
+                <button id="generateImageBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                    <span class="flex items-center justify-center">Генерирай изображение<span id="imageSpinner" class="hidden ml-2 loader"></span></span>
+                </button>
+                <div id="imageOutput" class="mt-4 p-4 bg-gray-900 rounded-md flex justify-center items-center h-80"></div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">Галерия с примери</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="../assets/example1.jpg" alt="Пример 1" class="w-full h-48 object-cover rounded-md mb-2">
+                    <p class="text-sm text-gray-400">Художествена илюстрация в стил фентъзи</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="../assets/example2.jpg" alt="Пример 2" class="w-full h-48 object-cover rounded-md mb-2">
+                    <p class="text-sm text-gray-400">Продуктова визуализация</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <img src="../assets/example3.jpg" alt="Пример 3" class="w-full h-48 object-cover rounded-md mb-2">
+                    <p class="text-sm text-gray-400">Архитектурна концепция</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/loadComponents.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/imageGeneration.js"></script>
+</body>
+</html>

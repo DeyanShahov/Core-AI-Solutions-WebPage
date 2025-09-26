@@ -1,0 +1,12 @@
+{
+  "name": "core-ai-solutions-webpage",
+  "version": "1.0.0",
+  "description": "Core AI Solutions Website",
+  "scripts": {
+    "build": "tailwindcss -i ./css/input.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./css/input.css -o ./css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

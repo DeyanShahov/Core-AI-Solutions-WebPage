@@ -4,9 +4,23 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px; /* Фиксирана височина на хедъра */
     z-index: 1000;
-    background-color: rgba(12, 12, 30, 0.8);
+    background-color: rgba(12, 12, 30, 0.95); /* По-тъмен фон за по-добра четимост */
     backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Добавяне на сянка за по-добро разделяне */
+}
+
+/* Fallback spacing: ensure page content never hides behind fixed header.
+   Uses a CSS variable so header height can be updated in one place. */
+:root {
+    --header-height: 80px;
+}
+
+body {
+    /* Add top padding equal to header height as a safe fallback. */
+    padding-top: var(--header-height);
 }
 
 .header {
@@ -15,7 +29,54 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem; /* Намаляване на вертикалния падинг */
+    height: 100%; /* Заемане на цялата височина */
+}
+
+/* Navigation Styles */
+.header nav {
+    display: flex;
+    align-items: center;
+}
+
+.header #nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header #nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.header #nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0ff;
+    transition: width 0.3s ease;
+}
+
+.header #nav-links li a:hover {
+    color: #0ff;
+}
+
+.header #nav-links li a:hover::after {
+    width: 100%;
 }
 
 .logo {

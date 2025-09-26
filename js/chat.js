@@ -2,12 +2,19 @@ import { API_KEY } from './config.js';
 import { toggleLoading, fileToBase64 } from './utils.js';
 
 export function initChat() {
+    // Взимаме елементите и проверяваме дали съществуват
     const elements = {
         chatMessages: document.getElementById('chatMessages'),
         chatInput: document.getElementById('chatInput'),
         chatSendBtn: document.getElementById('chatSendBtn'),
         chatImageInput: document.getElementById('chatImageInput')
     };
+
+    // Проверка дали сме на страница с чат компонент
+    if (!elements.chatMessages || !elements.chatInput || !elements.chatSendBtn) {
+        // Ако няма чат компоненти, просто се връщаме
+        return;
+    }
 
     const createChatMessage = (text, sender, imageUrl = null) => {
         const msgDiv = document.createElement('div');
@@ -25,7 +32,7 @@ export function initChat() {
 
     const handleChatSubmit = async () => {
         const userInput = elements.chatInput.value.trim();
-        const file = elements.chatImageInput.files[0];
+        const file = elements.chatImageInput?.files?.[0];
         if (!userInput && !file) return;
 
         if (file) {
