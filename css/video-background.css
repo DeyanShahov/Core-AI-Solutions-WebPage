@@ -1,0 +1,46 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.video-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 0;
+}
+
+.fullscreen-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Ensure all content scrolls over the video */
+body {
+    position: relative;
+    z-index: 1;
+}
+
+/* Container for all scrollable content */
+#header, #hero, #services, #portfolio, #about, #blog, #contact {
+    position: relative;
+    width: 100%;
+}

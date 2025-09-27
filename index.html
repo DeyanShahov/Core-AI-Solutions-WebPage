@@ -6,12 +6,23 @@
     <title>Core AI Solutions</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/video-background.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-    <!-- Анимиран градиент за фон -->
-    <div id="animated-background"></div>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            class="fullscreen-video"
+        >
+            <source src="videos/IMG_1727.MOV" type="video/mp4">
+        </video>
+    </div>
 
     <!-- Load components -->
     <div id="header"></div>
@@ -25,6 +36,7 @@
     <script src="js/utils.js" type="module"></script>
     <script src="js/chat.js" type="module"></script>
     <script src="js/loadComponents.js" type="module"></script>
+    <script src="js/video-background.js"></script>
     <script src="js/main.js" type="module"></script>
 </body>
 </html>
