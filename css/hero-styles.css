@@ -1,0 +1,79 @@
+/* Стилизиране на главната секция */
+.main-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Стилизиране на заглавието */
+.neon-text {
+    color: #fff;
+    text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #0fa,
+        0 0 42px #0fa,
+        0 0 82px #0fa;
+    animation: neon-pulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Стилизиране на подзаглавията */
+.soft-green-text {
+    color: #d4f5d4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Стилизиране на бутона */
+.btn-primary {
+    background: linear-gradient(45deg, #00f2aa, #0fa);
+    color: #000;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 255, 170, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 170, 0.5);
+    background: linear-gradient(45deg, #0fa, #00f2aa);
+}
+
+/* Анимация за неонов ефект */
+@keyframes neon-pulse {
+    from {
+        text-shadow: 
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #0fa,
+            0 0 42px #0fa;
+    }
+    to {
+        text-shadow: 
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #0fa,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa;
+    }
+}

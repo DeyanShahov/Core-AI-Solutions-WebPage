@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текст към говор - Core AI Solutions</title>
+    <script src="https://cdn.tailwindcss.com" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Анимиран градиент за фон -->
+    <div id="animated-background"></div>
+
+    <div id="header"></div>
+
+    <main class="container mx-auto px-4 py-8 mt-24">
+        <h1 class="text-4xl md:text-6xl font-bold text-center mb-8 neon-text">Текст към говор</h1>
+        
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">За услугата</h2>
+            <p class="text-gray-300 mb-4">
+                Нашата услуга за преобразуване на текст в говор използва най-съвременни AI технологии за създаване на естествено звучащ говор. От аудио книги до персонализирани гласови съобщения, нашият AI може да генерира реалистична реч според вашите изисквания.
+            </p>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">Възможности</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Множество гласове</h3>
+                    <p class="text-gray-400">Избор от различни гласове и акценти за по-естествено звучене</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Емоционален говор</h3>
+                    <p class="text-gray-400">Добавяне на емоционални нюанси в речта за по-изразително представяне</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">Демонстрация</h2>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <p class="text-gray-400 mb-4">Изпробвайте нашия AI конвертор на текст в говор:</p>
+                <textarea id="textPrompt" class="w-full p-3 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:border-cyan-400" placeholder="Въведете текст, който искате да преобразувате в говор..." rows="4"></textarea>
+                <button id="generateSpeechBtn" class="mt-3 w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold transition-colors duration-300">
+                    <span class="flex items-center justify-center">Генерирай говор<span id="speechSpinner" class="hidden ml-2 loader"></span></span>
+                </button>
+                <div id="audioOutput" class="mt-4 p-4 bg-gray-900 rounded-md">
+                    <audio id="audioPlayer" controls class="w-full" style="display: none;"></audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 soft-green-text">Приложения</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Аудио книги</h3>
+                    <p class="text-gray-400">Автоматично създаване на аудио книги от текстово съдържание</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Обучителни материали</h3>
+                    <p class="text-gray-400">Преобразуване на учебни материали в аудио формат</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Достъпност</h3>
+                    <p class="text-gray-400">Подобряване на достъпността на съдържание за хора с нарушено зрение</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>
