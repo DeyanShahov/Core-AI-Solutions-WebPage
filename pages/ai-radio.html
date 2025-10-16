@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAIS: AI Онлайн Радио Станция - Core AI Solutions</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <div id="header"></div>
+    <main class="container mx-auto px-4 py-8 mt-24">
+        <h1 class="text-4xl md:text-6xl font-bold text-center mb-8 neon-text">CAIS: AI Онлайн Радио Станция</h1>
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 soft-green-text">Описание</h2>
+            <p>Интелигентна онлайн радио станция, която генерира инструментална музика в реално време чрез използване на AI технологии. Системата поддържа множество канали с независими конфигурации и осигурява безпроблемно слушане с гладко превключване между песни.</p>
+        </section>
+<section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 soft-green-text">Ключови Особености</h2>
+            <div class="bg-gray-800 p-4 rounded mb-2">
+                <ul class="list-disc pl-8 mb-4 space-y-2">
+                    <li class="ml-6">Мулти-канална архитектура с независими конфигурации за всеки канал</li>
+                    <li class="ml-6">Генерация на музика в реално време чрез AI API (анализ на текст/видео) → AI (генерация на аудио)</li>
+                    <li class="ml-6">Реално комуникиране (чат, аудио стрийминг, актуализации на интерфейса)</li>
+                    <li class="ml-6">Разширена система за опашки с ограничение на заявките</li>
+                    <li class="ml-6">Режим "сън" за канали без слушатели за оптимизация на ресурсите</li>
+                    <li class="ml-6">Аудио визуализатор с динамични ленти, подобрени цветове и ефект "bloom"</li>
+                    <li class="ml-6">Различни типове заявки: чат, бърз избор на стил, разширени заявки, URL на видео</li>
+                    <li class="ml-6">Автоматична генерация на музика когато няма потребителски заявки</li>
+                    <li class="ml-6">"Топла опашка" за незабавно пускане по време на стартиране</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 soft-green-text">Техническа Архитектура</h2>
+            <div class="bg-gray-800 p-4 rounded mb-2">
+                <p>Системата е базирана на ASP.NET Core MVC с SignalR hub и специфични услуги за всеки канал:</p>
+                <ul class="list-disc pl-8 mb-4 space-y-2">
+                    <li class="ml-6">ChannelManagerService - оркестрира каналите</li>
+                    <li class="ml-6">RadioService - управлява логиката на канала</li>
+                    <li class="ml-6">GenerationDispatcherService - обработва заявките за генерация</li>
+                    <li class="ml-6">ComfyUIService - комуникира с ComfyUI API</li>
+                    <li class="ml-6">PlaybackService - управлява аудио стрийминга</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-4 soft-green-text">Тествайте радиото</h2>
+            <div class="bg-gray-800 p-4 rounded mb-2">
+                <p>Опитайте нашата AI онлайн радио станция! Генерирайте инструментална музика в реално време чрез използване на нашите AI технологии. Следвайте линка по-долу, за да започнете да слушате:</p>
+                
+            </div>
+            <div class="mt-4 w-full">
+                    <a href="http://46.10.144.87:81" target="_blank" class="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md font-bold block text-center">
+                        Отворете радиото
+                    </a>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script type="module" src="../js/main.js"></script>
+</body>
+</html>

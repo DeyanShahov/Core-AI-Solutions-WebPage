@@ -49,7 +49,7 @@ Core AI Solutions WebPage/
     ├── machine-learning.html
     ├── personalized-chatbot.html
     ├── description-generator.html
-    ├── logistics-optimization.html
+    ├── ai-radio.html
     ├── blog-ai-healthcare.html
     ├── blog-ai-trends-2025.html
     └── blog-project-x.html
@@ -88,7 +88,7 @@ The pages directory contains individual pages for each AI service:
 - Machine Learning
 - Personalized Chatbot
 - Description Generator
-- Logistics Optimization
+- AI Radio
 - Blog articles
 
 ## API Integration
